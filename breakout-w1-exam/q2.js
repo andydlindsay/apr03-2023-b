@@ -5,9 +5,9 @@
  */
 
 // Meant to be used by median. Do not alter.
-const round = function(number) {
-  return Math.round(number * 100) / 100;
-};
+// const round = function(number) {
+//   return Math.round(number * 100) / 100;
+// };
 
 /* ===========================================================================
  * MEDIAN - the middle number of a list (when sorted)
@@ -23,7 +23,33 @@ const round = function(number) {
  *    4
  */
 
+// 6,2,3,4,9,7
+// 0 1 2 3 4 5
+
+// 6 / 2 = 3 - 1 = 2
+
 const median = function(arr) {
+  arr.sort();
+
+  const middleIndex = Math.floor(arr.length / 2);
+
+  if (arr.length % 2 === 0) {
+    // is even-length
+
+    const rightValue = arr[middleIndex];
+    const leftValue = arr[middleIndex - 1];
+
+    const average = (rightValue + leftValue) / 2; // BEDMAS PEMDAS
+
+    return average;
+
+  } else {
+    // must be odd-length
+    const middleValue = arr[middleIndex];
+
+    return middleValue;
+  }
+
 
 };
 

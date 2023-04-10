@@ -16,7 +16,24 @@
  *    0
  */
 const min = function(arr) {
+  // return Math.min(...arr);
 
+  // set aside space in memory to hold lowest seen so far
+  let lowestValue = arr[0];
+
+  // look at each element of the array (loop)
+  for (let i = 0; i < arr.length; i++) {
+    const element = arr[i];
+
+    // is this the lowest value we've seen so far?
+    if (element < lowestValue) {
+      // if yes, replace the lowest value with the current value
+      lowestValue = element;
+    }
+  }
+
+  // return the lowest value seen
+  return lowestValue;
 };
 
 
@@ -32,7 +49,22 @@ const min = function(arr) {
  *    9
  */
 const max = function(arr) {
+  // set aside space to hold highest value
+  let highestValue = arr[0];
 
+  // loop through provided array
+  for (let i = 0; i < arr.length; i++) {
+    const element = arr[i];
+
+    // is the current element higher than our highest
+    if (element > highestValue) {
+      // if yes, replace the highest value with the current value
+      highestValue = element;
+    }
+  }
+
+  // return highest value
+  return highestValue;
 };
 
 /* ===========================================================================
@@ -47,7 +79,11 @@ const max = function(arr) {
  *    9
  */
 const range = function(arr) {
-
+  const lowest = min(arr);
+  const highest = max(arr);
+  
+  const result = highest - lowest;
+  return result;
 };
 
 // Don't change below:
