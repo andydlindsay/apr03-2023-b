@@ -26,8 +26,24 @@ Examples:
 
 */
 
-const minmax = function(list) {
+// function compareNumbers(a, b) { // a = 7, b = 2
+//   return b - a; // 5
+// }
 
+const minmax = function(list) {
+  // sort the array
+  if (typeof list[0] === 'number') {
+    list.sort((a, b) => a - b); // numbers
+  } else {
+    list.sort(); // strings
+  }
+
+  // grab the first element and the last element
+  const first = list[0];
+  const last = list[list.length - 1];
+
+  // return the two elements inside an array
+  return [first, last];
 };
 
 // Don't change below:
