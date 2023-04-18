@@ -4,3 +4,4 @@
 * [BREAKOUT - Week 1 Exam Review](/breakout-w1-exam)
 * [BREAKOUT - Technical Interview Prep](/breakout-ti-prep)
 * [BREAKOUT - Week 2 Exam Review](/breakout-w2-exam)
+* [W03D03 - HTTP Cookies & User Authentication](/w03d03)
