@@ -1,0 +1,17 @@
+{
+  "name": "w03d03",
+  "version": "1.0.0",
+  "description": "W3D3 Lecture notes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0"
+  }
+}
