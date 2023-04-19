@@ -4,7 +4,7 @@
 - [ ] HTTP and cookies
 - [ ] Render pages differently based on language preference
 - [ ] Register user with email and password
-
+- [ ] Clearing cookies (user logout)
 
 
 
