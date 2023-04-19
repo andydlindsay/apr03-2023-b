@@ -21,6 +21,7 @@ const users = {
 const app = express();
 const port = 8000;
 
+// configuration
 app.set('view engine', 'ejs');
 
 // middleware
@@ -28,10 +29,12 @@ app.use(morgan('dev'));
 app.use(cookieParser()); // populates req.cookies
 app.use(express.urlencoded({ extended: false })); // populates req.body
 
+// GET /login
 app.get('/login', (req, res) => {
   res.render('login');
 });
 
+// POST /login
 app.post('/login', (req, res) => {
   // console.log(req.body);
 
@@ -72,12 +75,13 @@ app.post('/login', (req, res) => {
   res.redirect('/protected');
 });
 
+// GET /protected
 app.get('/protected', (req, res) => {
   // do they have a cookie?
   const userId = req.cookies.userId;
 
   if (!userId) {
-    res.status(401).send('you must be logged in to see this page');
+    return res.status(401).send('you must be logged in to see this page');
   }
 
   // lookup the user based off their cookie
@@ -91,6 +95,7 @@ app.get('/protected', (req, res) => {
   res.render('protected', templateVars);
 });
 
+// POST /logout
 app.post('/logout', (req, res) => {
   // clear the userId cookie
   res.clearCookie('userId');
@@ -99,6 +104,7 @@ app.post('/logout', (req, res) => {
   res.redirect('/login');
 });
 
+// GET /languages/:languagePref
 app.get('/languages/:languagePref', (req, res) => {
   const languagePref = req.params.languagePref;
 
@@ -109,6 +115,7 @@ app.get('/languages/:languagePref', (req, res) => {
   res.redirect('/home');
 });
 
+// GET /home
 app.get('/home', (req, res) => {
   // console.log(req.cookies);
   const languagePreference = req.cookies.languageChoice; // read the cookie's value
@@ -121,6 +128,7 @@ app.get('/home', (req, res) => {
   res.render('home', templateVars);
 });
 
+// GET /about
 app.get('/about', (req, res) => {
   const languagePreference = req.cookies.languageChoice;
 
