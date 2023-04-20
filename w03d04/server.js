@@ -1,17 +1,19 @@
 const express = require('express');
 const morgan = require('morgan');
-const cookieParser = require('cookie-parser');
+// const cookieParser = require('cookie-parser');
+const cookieSession = require('cookie-session');
+const bcrypt = require('bcryptjs');
 
 const users = {
   abc: {
     id: "abc",
     email: "a@a.com",
-    password: "1234",
+    password: "$2a$10$MmM6RsL7Sj4C5omPWxnxXey1qh4rJxiOzgomTX8eb.MvqKWBMZ/u2",
   },
   def: {
     id: "def",
     email: "b@b.com",
-    password: "5678",
+    password: "$2a$10$MmM6RsL7Sj4C5omPWxnxXey1qh4rJxiOzgomTX8eb.MvqKWBMZ/u2",
   },
 };
 
@@ -23,8 +25,20 @@ app.set('view engine', 'ejs');
 
 // middleware
 app.use(morgan('dev'));
-app.use(cookieParser()); // populates req.cookies
+// app.use(cookieParser()); // populates req.cookies
 app.use(express.urlencoded({ extended: false })); // populates req.body
+
+app.use(cookieSession({
+  name: 'my-cookie',
+  keys: ['kasdhfkahsdkf']
+}));
+
+app.use((req, res, next) => {
+  console.log(req.method); // 'GET', 'POST'
+  req.method = 'PATCH'
+
+  next(); // to tell Express that we're done
+});
 
 // GET /register
 app.get('/register', (req, res) => {
@@ -60,10 +74,11 @@ app.post('/register', (req, res) => {
 
   // happy path! we can create the new user object
   const id = Math.random().toString(36).substring(2, 5);
+  const hash = bcrypt.hashSync(password, 10);
   const newUser = {
     id: id,
     email: email,
-    password: password
+    password: hash
   };
 
   // add the new user to the users object
@@ -109,13 +124,15 @@ app.post('/login', (req, res) => {
   }
 
   // does the provided password NOT match the one from the database
-  if (foundUser.password !== password) {
+  if (!bcrypt.compareSync(password, foundUser.password)) {
+  // if (foundUser.password !== password) {
     return res.status(400).send('passwords do not match');
   }
 
   // happy path! The user is who they say they are!
   // set a cookie and redirect the user
-  res.cookie('userId', foundUser.id);
+  // res.cookie('userId', foundUser.id);
+  req.session.userId = foundUser.id;
 
   res.redirect('/protected');
 });
@@ -123,7 +140,8 @@ app.post('/login', (req, res) => {
 // GET /protected
 app.get('/protected', (req, res) => {
   // do they have a cookie?
-  const userId = req.cookies.userId;
+  // const userId = req.cookies.userId;
+  const userId = req.session.userId;
 
   if (!userId) {
     return res.status(401).send('you must be logged in to see this page');
@@ -143,7 +161,9 @@ app.get('/protected', (req, res) => {
 // POST /logout
 app.post('/logout', (req, res) => {
   // clear the userId cookie
-  res.clearCookie('userId');
+  // res.clearCookie('userId');
+  // req.session.userId = null;
+  req.session = null;
 
   // redirect the user
   res.redirect('/login');
