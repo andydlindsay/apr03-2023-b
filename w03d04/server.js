@@ -33,12 +33,14 @@ app.use(cookieSession({
   keys: ['kasdhfkahsdkf']
 }));
 
-app.use((req, res, next) => {
-  console.log(req.method); // 'GET', 'POST'
-  req.method = 'PATCH'
-
-  next(); // to tell Express that we're done
-});
+// creating our own version of the method override package
+// app.use((req, res, next) => {
+//   console.log(req.method); // 'GET', 'POST'
+//   req.method = 'PATCH' // set the method to 'PATCH' from now on; will match app.patch()
+//   console.log(req.query); // { '_method': 'PATCH' }
+//   req.method = req.query._method; // override the method with the value from _method
+//   next(); // tell Express that we're done
+// });
 
 // GET /register
 app.get('/register', (req, res) => {
