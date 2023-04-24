@@ -1,0 +1,35 @@
+.box {
+  flex: 1;
+  min-height: 150px;
+  font-size: 40px;
+  margin: 0;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.green {
+  background-color: green;
+}
+
+.red {
+  background-color: red;
+}
+
+.purple {
+  background-color: purple;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.hotpink {
+  background-color: hotpink;
+}
+
+.container {
+  display: flex;
+  /* flex: 1; */
+}
