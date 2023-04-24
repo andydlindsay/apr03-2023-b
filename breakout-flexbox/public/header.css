@@ -1,0 +1,15 @@
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 100px;
+  /* height: 10px; */
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
