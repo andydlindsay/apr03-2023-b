@@ -6,7 +6,7 @@
 - [x] Styling a Header/Navbar
 - [x] Questions?
 
-### Parent/Child Relationship
+### Parent/Child Relationships in HTML
 * The DOM is implemented as a tree data structure
 * Nodes in a tree can have:
   * an unlimited number of children
