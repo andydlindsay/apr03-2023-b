@@ -7,54 +7,32 @@
 - [x] Questions?
 
 ### Parent/Child Relationship
-* DOM is a tree
-* Node can have an unlimited number of children
-* Node can have an unlimited number of siblings
-* Node can only have one parent
+* The DOM is implemented as a tree data structure
+* Nodes in a tree can have:
+  * an unlimited number of children
+  * an unlimited number of siblings
+  * only one parent
 
 * A child is anything that comes between the opening and closing tags
 
 ```html
+<!-- this <h2> has one child: a text node containing "Hello World" -->
 <h2>Hello World</h2>
 
-<img />
-<input />
-
+<!-- this <div> has two children: a <p> and a <div> (the child <div> also has a child <h2>) -->
 <div>
   <p>I'm a paragraph</p>
   <div>
-    <h2>Nested elements</h2>
+    <h2>Nested element</h2>
   </div>
 </div>
-
-div
-  - p
-    - text node
 ```
 
-Navbar
-- Logo
-- link to Home page
-- link to About page
-- link to Products page
-- You are signed in as
-- Logout button
+```html
+<!-- note: self-closing tags will not have child elements -->
+<img />
+<input />
+```
 
-
-let a = 'Alice'
-let username = 'Alice'
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+### Useful Links
+* [Flexbox Cheat Sheet](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
