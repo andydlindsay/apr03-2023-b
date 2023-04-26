@@ -1,0 +1,16 @@
+.coffee-element {
+  border: 2px solid lightseagreen;
+  border-radius: 15px;
+  padding: 0 20px;
+  margin-bottom: 10px;
+}
+
+.coffee-header {
+  display: flex;
+  justify-content: space-between;
+  color: mediumorchid;
+}
+
+.coffee-footer {
+  color: firebrick;
+}
