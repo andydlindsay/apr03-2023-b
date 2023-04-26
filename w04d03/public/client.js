@@ -47,6 +47,8 @@ $(document).ready(() => {
   };
 
   const renderCoffees = (arrOfCoffees) => {
+    $coffeesSection.empty(); // remove any existing child nodes before adding new ones
+
     for (const coffee of arrOfCoffees) {
       const $coffeeElement = createCoffeeElement(coffee);
       $coffeesSection.prepend($coffeeElement);
@@ -62,11 +64,13 @@ $(document).ready(() => {
     });
   };
 
+  // make a GET request to load the initial coffees
   fetchCoffees();
 
   // grab the form from the DOM
   const $form = $('#new-coffee-form');
 
+  // add a submit handler to the form
   $form.on('submit', (event) => {
     event.preventDefault();
     console.log('form has submitted');
