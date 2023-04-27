@@ -8,3 +8,4 @@
 * [W03D04 - Security & Real World HTTP Servers](/w03d04)
 * [BREAKOUT - Flexbox](/breakout-flexbox)
 * [W04D03 - AJAX](/w04d03)
+* [W04D04 - Responsive Design and SASS](/w04d04)
