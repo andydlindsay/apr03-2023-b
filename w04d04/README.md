@@ -19,6 +19,20 @@
 * CSS provides us with some tools to help make our designs more responsive
 * They include:
 
+#### Viewport Meta Tag
+* We can add `meta` tags to the `head` element of our html
+* In order to make sure that the user's browser displays our page correctly, we want to target the `viewport` meta tag
+
+```html
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+```
+
+* The `content` portion is made up of two key/value pairs: `width` and `initial-scale`
+* `width=device-width` tells the browser to set the width of the page to the width of the device
+* `intial-scale=1.0` sets the initial zoom level of the page to `1.0` (or 100%)
+
 #### Relative Units
 * Instead of specifying element dimensions using fixed units (eg. pixels), we can use relative units to help things scale appropriately for various display sizes
 
@@ -63,20 +77,6 @@ p.relative {
 * `max-width` and `min-width` are used to set a maximum and minimum width respectively
 * The element will not grow beyond the `max-width` nor shrink below the `min-width`
 * Useful for making sure that your responsive elements don't grow or shrink to a point where they break the layout
-
-#### Viewport Meta Tag
-* We can add `meta` tags to the `head` element of our html
-* In order to make sure that the user's browser displays our page correctly, we want to target the `viewport` meta tag
-
-```html
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-```
-
-* The `content` portion is made up of two key/value pairs: `width` and `initial-scale`
-* `width=device-width` tells the browser to set the width of the page to the width of the device
-* `intial-scale=1.0` sets the initial zoom level of the page to `1.0` (or 100%)
 
 #### Media Queries
 * Media queries allow us to make changes to our design based on the user's device
