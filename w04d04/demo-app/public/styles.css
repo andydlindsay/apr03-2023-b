@@ -2,10 +2,14 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 24px;
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-size: 50px;
+  font-size: 20px;
 }
 
 header {
@@ -15,11 +19,16 @@ header {
 
 section {
   border: 2px solid black;
+  /* width: 400px; */
+  /* height: 500px; */
+  font-size: 15px;
 }
 
 section div {
   height: 150px;
-  width: 150px;
+  width: 10rem;
+  /* min-width: 100px; */
+  max-width: 250px;
   margin: 20px;
   line-height: 150px;
   display: inline-block;
@@ -31,3 +40,25 @@ footer {
   background-color: burlywood;
   height: 150px;
 }
+
+@media only screen and (orientation: landscape) {
+  section {
+    background-color: deeppink;
+  }
+}
+
+
+/* @media only screen and (max-width: 476px) {
+  section {
+    background-color: blueviolet;
+    font-size: 12px;
+  }
+}
+
+@media only screen and (min-width: 477px) and (max-width: 768px) {
+  section {
+    background-color: orangered;
+  }
+} */
+
+
