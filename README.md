@@ -9,3 +9,4 @@
 * [BREAKOUT - Flexbox](/breakout-flexbox)
 * [W04D03 - AJAX](/w04d03)
 * [W04D04 - Responsive Design and SASS](/w04d04)
+* [W05D03 - SQL from our Apps](/w05d03)
