@@ -12,7 +12,6 @@
 - Open source project maintained by Facebook
 - React is built around the concept of managing data
   - Changes to the underlying data result in changes to the UI
-  - In React, state === data
 - Component-based: UI is composed of small pieces
 - Declarative: We describe the final outcome of our code and not the step-by-step process to achieve that result
 
@@ -30,7 +29,6 @@
 - Ideally, components should be reusable (which means that their state should be passed into them via props rather than maintaining their own state)
 - Deciding which DOM elements become components and which don't is a skill that comes with practice and experience
 - We will be building all of our components using functions
-- The functions return value contains a mixture of HTML and JS; React calls this `JSX`
 
 ```jsx
 // basic component
