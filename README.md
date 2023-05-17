@@ -13,3 +13,4 @@
 * [W05D05 - Midterm Project Kickoff](/w05d05)
 * [BREAKOUT - Express Router](/breakout-express-router)
 * [W07D01 - JSX and Props](/w07d01)
+* [W07D03 - React Developer Workflow](/w07d03)
