@@ -12,9 +12,9 @@ const ProductList = (props) => {
 
   const mappedProducts = props.products.map((product) => {
     return <ProductListItem
-      name={product.name}
-      description={product.description}
-      price={product.price}
+      name={ product.name }
+      description={ product.description }
+      price={ product.price }
     />;
   }); 
 
