@@ -1,0 +1,15 @@
+$primary: darkgrey;
+
+.todo-list-item {
+  border: 2px solid $primary;
+  border-radius: 15px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.todo-list-item--completed {
+  border-color: green;
+}
