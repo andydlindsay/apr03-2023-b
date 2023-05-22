@@ -36,7 +36,8 @@ PGPASSWORD=development
 PGPORT=5432
 ```
 
-5. Update the config object to use the keys from the `.env` 
+5. Update the `.gitignore` to include the new `.env.development` file
+6. Update the config object to use the keys from the `.env` 
 
 ```js
 // inside /backend/src/db/index.js
@@ -53,9 +54,9 @@ const client = new pg.Client({
 });
 ```
 
-6. Start the server with `npm start`
-7. Visit `http://localhost:8001/api/debug/reset` to recreate and reseed the database tables
-8. Test the `/api/photos` and `/api/topics` endpoints
+7. Start the server with `npm start`
+8. Visit `http://localhost:8001/api/debug/reset` to recreate and reseed the database tables
+9. Test the `/api/photos` and `/api/topics` endpoints
 
 ### Pure Functions
 - A function is said to be pure if:
