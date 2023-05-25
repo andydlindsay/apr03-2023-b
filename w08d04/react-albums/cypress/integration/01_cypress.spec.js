@@ -1,7 +1,7 @@
-// mocha and chai internally
+// Cypress uses mocha and chai internally
 
-// describe(''); // optional
-// it(''); // individuall test
+// describe(''); // optional - groups related tests together
+// it(''); // individual test
 
 describe('basic cypress test', () => {
 
