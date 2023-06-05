@@ -18,3 +18,4 @@
 * [W08D01 - Data Fetching & Other Side Effects](/w08d01)
 * [BREAKOUT - PhotoLabs Backend](/breakout-photolabs-backend)
 * [W08D04 - End-to-End Testing with Cypress](/w08d04)
+* [W10D01 - Rails Review](/w10d01)
