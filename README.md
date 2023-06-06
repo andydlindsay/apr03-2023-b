@@ -19,3 +19,4 @@
 * [BREAKOUT - PhotoLabs Backend](/breakout-photolabs-backend)
 * [W08D04 - End-to-End Testing with Cypress](/w08d04)
 * [W10D01 - Rails Review](/w10d01)
+* [ADVANCED - Intro to TypeScript](/w10d03)
