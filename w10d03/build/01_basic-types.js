@@ -1,0 +1,11 @@
+"use strict";
+let username = 'alice';
+username = 'bob';
+username = 42;
+username = false;
+const myArr = [];
+myArr.push('hello');
+myArr.push(42);
+// myArr.push(42);
+// myArr.push(true);
+const result = myArr.pop();
